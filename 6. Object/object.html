@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Dasar</title>
+  </head>
+  <body>
+    <h1><u>OBJECT</u></h1>
+    <p>
+      sebuah objek adalah struktur data yang kompleks yang mengizinkan Anda untuk menyimpan berbagai jenis data (seperti string, angka, array, fungsi, dan bahkan objek lain) dalam satu tempat. Objek dalam JavaScript terdiri dari pasangan
+      kunci-nilai, di mana setiap kunci adalah nama properti objek dan setiap nilai dapat berupa tipe data apa pun atau dengan kata lain "Object adalah array, yg lebih sakti". Membuat objek ada berbagai macam cara yaitu sebagai berikut :
+    </p>
+    <dl>
+      <dt>Object Literal</dt>
+      <dd>Object Literal adalah cara umum untuk membuat objek dengan mendefinisikan propertinya langsung dalam kode tanpa menggunakan konstruktor. Ini memudahkan pembuatan objek dengan properti-properti yang sudah diketahui sebelumnya.</dd>
+      <br />
+      <dt>Function Declaration</dt>
+      <dd>
+        Function Declaration adalah cara untuk mendefinisikan sebuah fungsi di JavaScript. Ketika sebuah fungsi dideklarasikan dengan cara ini, JavaScript secara otomatis membuat sebuah objek fungsi yang bisa digunakan untuk membuat objek
+        baru.
+      </dd>
+      <br />
+      <dt>Constructor</dt>
+      <dd>
+        Constructor adalah sebuah fungsi khusus yang digunakan untuk membuat dan menginisialisasi objek baru. Ketika sebuah objek dibuat menggunakan constructor, constructor tersebut secara otomatis dipanggil untuk menginisialisasi properti
+        objek.
+      </dd>
+      <br />
+    </dl>
+    <hr />
+    <p>Contoh 1 :</p>
+    <pre>
+      let person = {
+        firstName: 'Kristian',
+        middleName: 'Rio',
+        lastName: 'Vernando',
+        age: 27,
+        address: {
+          street: 'Jl. Serundung Permai II',
+          city: 'Nanga Pinoh',
+          province: 'Kalimantan Barat',
+        },
+      };
+      document.writeln('halo nama saya ' + person.middleName + ' saya berumur ' + person.age + 
+      ' tahun, dan saya sekarang tinggal di ' + person.address['street'] + ' tepatnya di provinsi ' + person.address['province']);
+    </pre>
+    <p>Output :</p>
+    <script>
+      let person = {
+        firstName: 'Kristian',
+        middleName: 'Rio',
+        lastName: 'Vernando',
+        age: 27,
+        address: {
+          street: 'Jl. Serundung Permai II',
+          city: 'Nanga Pinoh',
+          province: 'Kalimantan Barat',
+        },
+      };
+      document.writeln('Halo nama saya ' + person.middleName + ' saya berumur ' + person.age + ' tahun, dan saya sekarang tinggal di ' + person.address['street'] + ' tepatnya di provinsi ' + person.address['province']);
+    </script>
+    <hr />
+    <p>Contoh 2 :</p>
+    <pre>
+     // Objek Literal
+      let mhs = {
+        nama: 'Kristian Rio Vernando',
+        nim: '145410169',
+        email: 'riovernando70@gmail.com',
+        jurusan: 'Teknik Informatika',
+      };
+      document.writeln('Nama    : ' + mhs.nama);
+      document.writeln('NIM     : ' + mhs.nim);
+      document.writeln('Email   : ' + mhs.email);
+      document.writeln('Jurusan : ' + mhs.jurusan);
+    </pre>
+    <p>Output :</p>
+    <script>
+      // Objek Literal
+      let mhs = {
+        nama: 'Kristian Rio Vernando',
+        nim: '145410169',
+        email: 'riovernando70@gmail.com',
+        jurusan: 'Teknik Informatika',
+      };
+      document.writeln('<p>Nama    : ' + mhs.nama + '</p>');
+      document.writeln('<p>NIM     : ' + mhs.nim + '</p>');
+      document.writeln('<p>Email   : ' + mhs.email + '</p>');
+      document.writeln('<p>Jurusan : ' + mhs.jurusan + '</p>');
+    </script>
+    <hr />
+    <p>Contoh 3</p>
+    <pre>
+        // Function Declaration
+        function objectMhs(nama, nim, email, jurusan) {
+          let mhs = {};
+          mhs.nama = nama;
+          mhs.nim = nim;
+          mhs.email = email;
+          mhs.jurusan = jurusan;
+          return mhs;
+        }
+  
+        let mhs1 = objectMhs('Kristian Rio Vernando', '145410169', 'riojr997@gmail.com', 'Teknik Informatika');
+        document.writeln('Nama    : ' + mhs1.nama);
+        document.writeln('NIM     : ' + mhs1.nim);
+        document.writeln('Email   : ' + mhs1.email);
+        document.writeln('Jurusan : ' + mhs1.jurusan);
+    </pre>
+    <p>Output :</p>
+    <script>
+      // Function Declaration
+      function objectMhs(nama, nim, email, jurusan) {
+        let mhs = {};
+        mhs.nama = nama;
+        mhs.nim = nim;
+        mhs.email = email;
+        mhs.jurusan = jurusan;
+        return mhs;
+      }
+
+      let mhs1 = objectMhs('Abdias Evan Kristi', '145410170', 'evanjr997@gmail.com', 'Teknik Komputer');
+      document.writeln('<p>Nama    : ' + mhs1.nama + '</p>');
+      document.writeln('<p>NIM     : ' + mhs1.nim + '</p>');
+      document.writeln('<p>Email   : ' + mhs1.email + '</p>');
+      document.writeln('<p>Jurusan : ' + mhs1.jurusan + '</p>');
+    </script>
+    <hr />
+    <p>Contoh 4 :</p>
+    <pre>
+        // Constructor => Recommended
+        function Person(nama, umur, alamat) {
+          this.nama = nama;
+          this.umur = umur;
+          this.alamat = alamat;
+        }
+        let person1 = new Person('Rio', '27', 'Nanga Pinoh');
+        document.writeln('Nama : ' + person1.nama);
+        document.writeln('Umur : ' + person1.umur);
+        document.writeln('Alamat : ' + person1.alamat);
+    </pre>
+    <p>Output :</p>
+    <script>
+      // Constructor => Recommended
+      function Person(nama, umur, alamat) {
+        this.nama = nama;
+        this.umur = umur;
+        this.alamat = alamat;
+      }
+      let person1 = new Person('Rio', '27', 'Nanga Pinoh');
+      document.writeln('<p>Nama : ' + person1.nama + '</p>');
+      document.writeln('<p>Umur : ' + person1.umur + '</p>');
+      document.writeln('<p>Alamat : ' + person1.alamat + '</p>');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Dasar</title>
+  </head>
+  <body>
+    <h1><u>Perulangan do while (Do While Loop)</u></h1>
+    <p>
+      do-while loop adalah struktur pengulangan yang mirip dengan while loop, namun dengan perbedaan bahwa blok kode dieksekusi sekali sebelum kondisi dievaluasi. Setelah itu, blok kode akan terus dieksekusi selama kondisi masih bernilai
+      true.
+    </p>
+    <hr />
+    <p>Contoh 1 :</p>
+    <pre>
+      let x = 1;
+
+      do {
+        document.writeln('Iterasi ke - ' + x + ');
+        x++;
+      } while (x <= 5);
+    </pre>
+    <p>Output :</p>
+    <script>
+      let x = 1;
+
+      do {
+        document.writeln('<p>Iterasi ke - ' + x + '</p>');
+        x++;
+      } while (x <= 5);
+    </script>
+    <hr />
+    <p>Contoh 2 :</p>
+    <pre>
+      let input;
+      let numbers = [];
+
+      do {
+        input = parseInt(prompt('Masukkan angka positif (masukkan angka negatif untuk berhenti):'));
+        if (input >= 0) {
+          numbers.push(input);
+        }
+      } while (input >= 0);
+
+      document.writeln('Angka-angka yang dimasukkan : ' + numbers.join(' '));
+    </pre>
+    <p>Output :</p>
+    <script>
+      let input;
+      let numbers = [];
+
+      do {
+        input = parseInt(prompt('Masukkan angka positif (masukkan angka negatif untuk berhenti):'));
+        if (input >= 0) {
+          numbers.push(input);
+        }
+      } while (input >= 0);
+
+      document.writeln('<p>Angka-angka yang dimasukkan : </p>' + numbers.join(' '));
+    </script>
+  </body>
+</html>

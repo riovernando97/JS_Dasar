@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Dasar</title>
+  </head>
+  <body>
+    <h1><u>ARRAY</u></h1>
+    <p>
+      Array merupakan tipe data yang digunakan untuk mendeskripsikan kumpulan elemen (nilai atau variabel), yang tiap - tiap elemennya memiliki index yang dimulai dari 0, dengan kata lain array adalah variabel yang lebih sakti karena bisa
+      menampung nilai lebih dari 1 nilai.
+    </p>
+    Ada beberapa method pada array untuk mempermudah manipulasi pada array, yaitu :
+    <ol>
+      <li>Length</li>
+      Method yg berfungsi untuk mengetahui berapa panjang elemen atau jumlah elemen pada array.
+      <li>Join</li>
+      Menggabungkan semua elemen dalam array menjadi satu string dengan menggunakan pemisah yang ditentukan.
+      <li>Push</li>
+      Menambahkan satu atau lebih elemen ke akhir array dan mengembalikan panjang baru dari array tersebut.
+      <li>Pop</li>
+      Menghapus elemen terakhir dari array dan mengembalikan elemen tersebut.
+      <li>Shift</li>
+      Menghapus elemen pertama dari array dan menggeser semua elemen lainnya ke indeks yang lebih rendah, kemudian mengembalikan elemen yang dihapus.
+      <li>Unshift</li>
+      Menambahkan satu atau lebih elemen ke awal array dan menggeser semua elemen lainnya ke indeks yang lebih tinggi.
+      <li>Slice</li>
+      digunakan untuk membuat salinan bagian tertentu dari array ke array baru tanpa memodifikasi array asli. Metode ini menerima dua argumen opsional: start (indeks mulai) dan end (indeks selesai, eksklusif). start: Indeks mulai, di mana
+      elemen dengan indeks ini akan disertakan dalam salinan. end: Indeks selesai (opsional), di mana elemen dengan indeks ini tidak akan disertakan dalam salinan.
+      <li>Splice</li>
+      digunakan untuk mengubah konten array dengan menghapus atau mengganti elemen yang ada dan/atau menambahkan elemen baru ke dalam array. Metode ini menerima tiga argumen atau lebih: start: Indeks di mana penghapusan/dan atau penambahan
+      akan dimulai. deleteCount (opsional): Jumlah elemen yang akan dihapus, dimulai dari indeks yang diberikan oleh start. Jika deleteCount tidak ditentukan, semua elemen dari start hingga akhir array akan dihapus. item1, item2, ...
+      (opsional): Elemen yang akan ditambahkan ke array (jika ada).
+      <li>forEach</li>
+      digunakan untuk menjalankan sebuah fungsi callback sekali untuk setiap elemen dalam array. Ini tidak mengembalikan nilai apa pun (undefined). Digunakan ketika Anda hanya ingin menjalankan kode untuk setiap elemen dalam array tanpa
+      membuat array baru atau memodifikasi array yang ada.
+      <li>Map</li>
+      digunakan untuk membuat array baru dengan hasil pemanggilan fungsi callback pada setiap elemen dalam array asli. Ini mengembalikan array baru yang berisi hasil dari fungsi callback untuk setiap elemen dalam array. Biasanya digunakan
+      ketika Anda ingin membuat array baru dengan melakukan transformasi pada setiap elemen dalam array yang ada.
+      <li>Filter</li>
+      digunakan untuk membuat array baru yang berisi elemen-elemen dari array asli yang memenuhi kriteria tertentu yang ditentukan dalam fungsi callback. Ini mengembalikan array baru yang berisi semua elemen yang mengembalikan nilai true
+      dari fungsi callback. Biasanya digunakan ketika Anda ingin membuat array baru yang berisi subset dari elemen-elemen dalam array asli yang memenuhi kondisi tertentu.
+      <li>Find</li>
+      digunakan untuk mencari elemen pertama dalam array yang memenuhi kriteria tertentu yang ditentukan dalam fungsi callback. Ini mengembalikan nilai dari elemen pertama yang memenuhi kriteria, atau undefined jika tidak ditemukan.
+      Biasanya digunakan ketika Anda hanya tertarik pada elemen tunggal dalam array yang memenuhi kondisi tertentu.
+    </ol>
+    <hr />
+    <h3>Output buka di console browser ==></h3>
+    <p>Contoh 1 :</p>
+    <pre>
+      let hewan = ['Babi', 'Kucing', 'Anjing', 'Panda', 'Koala', 'Buaya', 'Singa'];
+
+      // Menampilkan array sebagai objek
+      document.writeln('' + hewan + '');
+
+      // Menampilkan array bukan sebagai objek
+      for (i = 1; i < hewan.length; i++) {
+        document.writeln('hewan ke - ' + i + ' : ' + hewan[i] + '');
+      }
+    </pre>
+    <p>Output :</p>
+    <script>
+      let hewan = ['Babi', 'Kucing', 'Anjing', 'Panda', 'Koala', 'Buaya', 'Singa'];
+
+      // Menampilkan array sebagai objek
+      document.writeln('<p>' + hewan + '</p>');
+
+      // Menampilkan array bukan sebagai objek
+      for (i = 1; i < hewan.length; i++) {
+        document.writeln('<p>Hewan ke - ' + i + ' : ' + hewan[i] + '</p>');
+      }
+    </script>
+    <hr />
+    <p>Contoh 2 :</p>
+    <pre>
+      let multiArr = ['Rio', 2, false, [2, 5, 6]];
+
+      console.log(multiArr[3][1]);
+    </pre>
+    <p>Output :</p>
+    <script>
+      let multiArr = ['Rio', 2, false, [2, 5, 6]];
+
+      document.writeln(multiArr[3][1]);
+    </script>
+    <hr />
+    <p>Contoh 3 :</p>
+    <pre>
+      // Join
+      let arr = ['Kristian', 'Rio', 'Vernando'];
+      document.writeln(arr.join(' '));
+    </pre>
+    <p>Output :</p>
+    <script>
+      let arr = ['Kristian', 'Rio', 'Vernando'];
+      document.writeln(arr.join(' '));
+    </script>
+    <hr />
+    <p>Contoh 4 :</p>
+    <pre>
+      // push() => menambah satu atau lebih elemen pada array dan mengembalikan panjang baru dari array tersebut
+      arr.push('Jr');
+      document.writeln(arr.join(' '));
+    </pre>
+    <p>Output :</p>
+    <script>
+      // push() => menambah satu atau lebih elemen pada array dan mengembalikan panjang baru dari array tersebut
+      arr.push('Jr');
+      document.writeln(arr.join(' '));
+    </script>
+    <hr />
+    <p>Contoh 5 :</p>
+    <pre>
+      // Pop() => menghapus elemen terakhir pada array
+      arr.pop('Jr');
+      document.writeln(arr.join(' '));
+    </pre>
+    <p>Output :</p>
+    <script>
+      // Pop() => menghapus elemen terakhir pada array
+      arr.pop('Jr');
+      document.writeln(arr.join(' '));
+    </script>
+    <hr />
+    <p>Contoh 6 :</p>
+    <pre>
+      // shift() => menghapus elemen pertama dari array dan menggeser semua elemen lainnya ke index yg lebih rendah, kemudian mengembalikan elemen yg dihapus
+      arr.shift();
+      document.writeln(arr.join(' '));
+    </pre>
+    <p>Output :</p>
+    <script>
+      // shift() => menghapus elemen pertama dari array dan menggeser semua elemen lainnya ke index yg lebih rendah, kemudian mengembalikan elemen yg dihapus
+      arr.shift();
+      document.writeln(arr.join(' '));
+    </script>
+    <hr />
+    <p>Contoh 7 :</p>
+    <pre>
+      // unshift() => menambahkan satu atau lebih elemen ke awal array dan menggeser semua elemen lainnya ke index yang lebih tinggi / awal index
+      arr.unshift('Kristian');
+      document.writeln(arr.join(' '));
+    </pre>
+    <p>Output :</p>
+    <script>
+      // unshift() => menambahkan satu atau lebih elemen ke awal array dan menggeser semua elemen lainnya ke index yang lebih tinggi / awal index
+      arr.unshift('Kristian');
+      document.writeln(arr.join(' '));
+    </script>
+    <hr />
+    <p>Contoh 8 :</p>
+    <pre>
+      // Slice() => mengiris atau menyalin bagian elemen array yg telah di iris kemudian membuat array baru dari salinan elemen array tersebut
+      let arr1 = ['abdias', 'evan', 'kristi', 'carlo', 'angelo'];
+      let arr2 = arr1.slice(2, 4);
+      document.writeln(arr2.join(' '));
+    </pre>
+    <p>Output :</p>
+    <script>
+      // Slice() => mengiris atau menyalin bagian elemen array yg telah di iris kemudian membuat array baru dari salinan elemen array tersebut
+      let arr1 = ['abdias', 'evan', 'kristi', 'carlo', 'angelo'];
+      let arr2 = arr1.slice(2, 4);
+      document.writeln(arr2.join(' '));
+    </script>
+    <hr />
+    <p>Contoh 9 :</p>
+    <pre>
+      // Splice() => menambah elemen baru ke index tertentu atau di tengah-tengah elemen
+      // splice(indexAwal, maudihapusberapa, elemenBaru1, elemenBaru2,...)
+      arr.splice(2, 0, 'Bruno');
+      document.writeln(arr.join(' '));
+    </pre>
+    <p>Output :</p>
+    <script>
+      // Splice() => menambah elemen baru ke index tertentu atau di tengah-tengah elemen
+      // splice(indexAwal, maudihapusberapa, elemenBaru1, elemenBaru2,...)
+      arr.splice(2, 0, 'Bruno');
+      document.writeln(arr.join(' '));
+    </script>
+    <hr />
+    <p>Contoh 10 :</p>
+    <pre>
+      // forEach() dan Map() => digunakan untuk melakukan looping pada array lebih bagus dari for dan bisa melakukan sesuatu pada elemen-elemen yg ada didalam array secara otomatis.
+      // forEach() => tidak mengembalikan nilai array
+      let angka = [1, 2, 3, 4, 5, 6, 7, 8];
+      let nama = ['Evan', 'Rio', 'Rival'];
+      angka.forEach(function (e) {
+        document.writeln(e);
+      });
+
+      nama.forEach(function (e, i) {
+        document.writeln('Nama ke - ' + (i + 1) + ' : ' + e);
+      });
+    </pre>
+    <p>Output :</p>
+    <script>
+      // forEach() dan Map() => digunakan untuk melakukan looping pada array lebih bagus dari for dan bisa melakukan sesuatu pada elemen-elemen yg ada didalam array secara otomatis.
+      // forEach() => tidak mengembalikan nilai array
+      let angka = [1, 2, 3, 4, 5, 6, 7, 8];
+      let nama = ['Evan', 'Rio', 'Rival'];
+      angka.forEach(function (e) {
+        document.writeln(e);
+      });
+
+      nama.forEach(function (e, i) {
+        document.writeln('<p>Nama ke - ' + (i + 1) + ' : ' + e + '</p>');
+      });
+    </script>
+    <hr />
+    <p>Contoh 11 :</p>
+    <pre>
+      // map() => mengembalikan nilai array (return)
+      let number = [1, 2, 3, 4, 5, 6, 7, 8];
+      let number2 = number.map(function (e) {
+        return e * 2;
+      });
+      document.writeln(number2.join(' - '));
+    </pre>
+    <p>Output :</p>
+    <script>
+      // map() => mengembalikan nilai array (return)
+      let number = [1, 2, 3, 4, 5, 6, 7, 8];
+      let number2 = number.map(function (e) {
+        return e * 2;
+      });
+      document.writeln(number2.join(' - '));
+    </script>
+    <hr />
+    <p>Contoh 12 :</p>
+    <pre>
+      // sort() => mengurutkan elemen pada array
+      const arr3 = [3, 4, 7, 9, 5, 1, 2];
+      console.log(arr3.join(' - '));
+      arr3.sort();
+      console.log(arr3.join(' - '));
+
+      const arr4 = [1, 30, 10, 2, 5, 7, 6, 3];
+
+      console.log(arr4.join(' - '));
+
+      arr4.sort();
+      console.log(arr4.join(' - '));
+
+      arr4.sort(function (a, b) {
+        return a - b;
+      });
+      document.writeln(arr4.join(' - '));
+    </pre>
+    <p>Output :</p>
+    <script>
+      // sort() => mengurutkan elemen pada array
+      const arr3 = [3, 4, 7, 9, 5, 1, 2];
+      document.writeln('<p>Sebelum di sort = ' + arr3.join(' - ') + '</p>');
+      arr3.sort();
+      document.writeln('<p>Setelah di sort = ' + arr3.join(' - ') + '</p>');
+
+      const arr4 = [1, 30, 10, 2, 5, 7, 6, 3];
+
+      document.writeln('<p>Sebelum di sort = ' + arr4.join(' - ') + '</p>');
+      arr4.sort();
+      document.writeln('<p>Setelah di sort dengan tidak menggunakan function = ' + arr4.join(' - ') + '</p>');
+
+      arr4.sort(function (a, b) {
+        return a - b;
+      });
+      document.writeln('<p>Setelah di sort dengan menggunakan function = ' + arr4.join(' - ') + '</p>');
+    </script>
+    <hr />
+    <p>Contoh 13 :</p>
+    <pre>
+      // filter() => mencari banyak nilai elemen pada array dan mengembalikannya dalam bentuk array
+      const arr5 = [3, 2, 5, 6, 8, 10, 30];
+      const arr6 = arr5.filter(function (x) {
+        return x > 3;
+      });
+      document.writeln(arr6.join(' - '));
+    </pre>
+    <p>Output :</p>
+    <script>
+      // filter() => mencari banyak nilai elemen pada array dan mengembalikannya dalam bentuk array
+      const arr5 = [3, 2, 5, 6, 8, 10, 30];
+      const arr6 = arr5.filter(function (x) {
+        return x > 3;
+      });
+      document.writeln('Filter data dengan nilai array yg lebih dari 3 = ' + arr6.join(' - '));
+    </script>
+    <hr />
+    <p>Contoh 14 :</p>
+    <pre>
+      // find() => mencari satu nilai dan mengembalikanya tidak dalam bentuk array
+      const arr7 = [3, 5, 4, 7, 2, 8, 98];
+      const arr8 = arr7.find(function (y) {
+        return y > 4;
+      });
+      document.writeln(arr8); // tidak bisa pakai join()
+    </pre>
+    <p>Output :</p>
+    <script>
+      // find() => mencari satu nilai dan mengembalikanya tidak dalam bentuk array
+      const arr7 = [3, 5, 4, 7, 2, 8, 98];
+      const arr8 = arr7.find(function (y) {
+        return y > 4;
+      });
+      document.writeln('Nilai yg dicari = ' + arr8); // tidak bisa pakai join()
+    </script>
+    <hr />
+  </body>
+</html>

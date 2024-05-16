@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Dasar</title>
+  </head>
+  <body>
+    <h1><u>FUNCTION</u></h1>
+    <p>
+      Fungsi dalam pemrograman adalah blok kode yang dirancang untuk melakukan tugas tertentu. Mereka membantu dalam mengorganisir kode, mengurangi duplikasi, dan memungkinkan untuk pemanggilan ulang atau penggunaan kembali kode yang sama.
+      Fungsi biasanya menerima masukan (argumen), melakukan operasi atau perhitungan, dan kemudian mengembalikan hasil (nilai kembali). Fungsi dapat memecah program menjadi bagian-bagian yang lebih kecil dan lebih mudah dikelola. Ini
+      mempermudah pengembangan, pemeliharaan, dan pemahaman kode. Fungsi juga dapat digunakan untuk mengabstraksi detail-detail kompleks dari kode, sehingga memudahkan penggunaan kode tersebut tanpa harus memahami semua detail implementasi.
+      Ada dua jenis utama fungsi dalam pemrograman:
+    </p>
+    <p>
+      1. Fungsi bawaan (built-in functions): Ini adalah fungsi-fungsi yang telah disediakan oleh bahasa pemrograman itu sendiri. Contohnya adalah fungsi-fungsi matematika seperti `sqrt()` untuk akar kuadrat, `sin()` untuk sinus, `print()`
+      untuk mencetak output, dan lain-lain.
+    </p>
+    <p>
+      2. Fungsi yang didefinisikan pengguna (user-defined functions): Ini adalah fungsi-fungsi yang didefinisikan oleh pengguna atau programmer sesuai dengan kebutuhan mereka. Mereka dapat membuat fungsi-fungsi kustom untuk melakukan
+      tugas-tugas tertentu yang spesifik dalam program mereka. Fungsi juga dapat dikelompokkan bersama dalam bentuk modul atau pustaka, memungkinkan untuk pengelolaan yang lebih baik dari kode-kode terkait. Overall, fungsi adalah salah satu
+      konsep paling fundamental dalam pemrograman dan menjadi bagian penting dari hampir semua bahasa pemrograman yang ada.
+    </p>
+    <hr />
+    <p>Contoh 1 :</p>
+    <pre>
+      function volKubus(a, b) {
+        return a ** 3 + b ** 3;
+      }
+      document.writeln('Total dari luas kedua sisi kubus adalah = ' + volKubus(5, 3));
+    </pre>
+    <p>Output :</p>
+    <script>
+      function volKubus(a, b) {
+        return a ** 3 + b ** 3;
+      }
+      document.writeln('Total dari luas kedua sisi kubus adalah = ' + volKubus(5, 3));
+    </script>
+    <hr />
+    <p>Contoh 2 :</p>
+    <pre>
+      function luasLingkaran(r) {
+        let radius;
+        const phi = 3.14;
+        let result;
+
+        radius = r * r;
+        result = phi * radius;
+
+        return result;
+      }
+      document.writeln('Luas lingkarannya adalah = ' + luasLingkaran(6));
+    </pre>
+    <p>Output :</p>
+    <script>
+      function luasLingkaran(r) {
+        let radius;
+        let result;
+
+        radius = r * r;
+        result = 3.14 * radius;
+
+        return result;
+      }
+      document.writeln('Luas lingkarannya adalah = ' + luasLingkaran(5));
+    </script>
+    <hr />
+    <p>Contoh 3 :</p>
+    <pre>
+      function tambah() {
+        let hasil = 0;
+        for (let i = 0; i < arguments.length; i++) {
+          hasil += arguments[i];
+        }
+        return hasil;
+      }
+      let coba = tambah(2, 3, 4, 5, 6);
+      document.writeln(coba);
+    </pre>
+    <p>Output :</p>
+    <script>
+      function tambah() {
+        let hasil = 0;
+        for (let i = 0; i < arguments.length; i++) {
+          hasil += arguments[i];
+        }
+        return hasil;
+      }
+      let coba = tambah(2, 3, 4, 5, 6);
+      document.writeln(coba);
+    </script>
+  </body>
+</html>

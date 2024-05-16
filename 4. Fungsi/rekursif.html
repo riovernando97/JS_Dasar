@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Dasar</title>
+  </head>
+  <body>
+    <h1><u>REKURSIF FUNCTION</u></h1>
+    <p>Rekursif adalah sebuah konsep dala pemrograman di mana sebuah fungsi dapat memanggil dirinya sendiri dalam prosesnya. 2 elemen penting dalam rekursif yaitu :</p>
+    <dt>Kasus Dasar (Base Case)</dt>
+    <dd>Base Case adalah kondisi di mana rekursif berhenti ketika kasus dasar tercapai, fungsi rekursif biasanya mengembalikan nilai tanpa memanggil dirinya sendiri lagi, sehingga menghindari perulangan tak terbatas.</dd>
+    <br />
+    <dt>Kasus Rekursif (Recursive Case)</dt>
+    <dd>Kasus Rekursif adalah bagian dari fungsi di mana fungsi itu memanggil dirinya sendiri untuk menyelesaikan sub-masalah yang lebih kecil. Proses ini terus berlanjut sampai mencapai kasus dasar.</dd>
+
+    <hr />
+    <p>Contoh 1 :</p>
+    <pre>
+      function tampilAngka(n) {
+        if (n === 0) return;
+        document.writeln(n);
+        return tampilAngka(n - 1);
+      }
+
+      tampilAngka(10);
+    </pre>
+    <p>Output :</p>
+    <script>
+      function tampilAngka(n) {
+        if (n === 0) return; // Base Case
+        document.writeln(n);
+        return tampilAngka(n - 1);
+      }
+
+      tampilAngka(10);
+    </script>
+    <hr />
+    <p>Contoh 2 :</p>
+    <pre>
+      function faktorial(n) {
+        // Basis: faktorial dari 0 adalah 1
+        if (n === 0) return 1;
+
+        // Rekursif: faktorial dari n adalah n dikalikan dengan faktorial dari n-1
+        return n * faktorial(n - 1);
+      }
+      document.writeln('Faktorial dari 5 = ' + faktorial(5));
+    </pre>
+    <p>Output :</p>
+    <script>
+      function faktorial(n) {
+        // Basis: faktorial dari 0 adalah 1
+        if (n === 0) return 1;
+
+        // Rekursif: faktorial dari n adalah n dikalikan dengan faktorial dari n-1
+        return n * faktorial(n - 1);
+      }
+      document.writeln('Faktorial dari 5 = ' + faktorial(5));
+    </script>
+    <hr />
+    <p>Contoh 3 :</p>
+    <pre>
+      function fibonacci(n) {
+        if (n <= 1) return n;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+      }
+
+      document.writeln('Deret Fibonacci dari 8 = ' + fibonacci(8)); // Output: 5 (deret Fibonacci: 0, 1, 1, 2, 3, 5) 
+    </pre>
+    <p>Output :</p>
+    <script>
+      function fibonacci(n) {
+        if (n <= 1) return n;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+      }
+
+      document.writeln('Deret Fibonacci dari batas 5 = ' + fibonacci(5)); // Output: 5 (deret Fibonacci: 0, 1, 1, 2, 3, 5)
+    </script>
+  </body>
+</html>
